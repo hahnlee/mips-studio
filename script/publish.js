@@ -6,6 +6,6 @@ ghpages.publish('build', {
     '!**/*.map',
   ],
   branch: 'gh-pages',
-  repo: 'https://github.com/sn0wle0pard/mips-studio',
+  repo: 'https://github.com/sn0wle0pard/mips-studio.git',
   dotfiles: true,
 });
