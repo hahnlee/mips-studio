@@ -1,6 +1,8 @@
 # MIPS Studio
 > MIPS IDE Inspired by [MARS](http://courses.missouristate.edu/KenVollmar/mars/)
 
+![screenshot](./static/screenshot.png)
+
 # Build
 ```
 yarn install
