@@ -70,12 +70,19 @@ export class App extends Component {
       <div className="app">
         <Editor run={this.run} line={this.state.line}/>
         <div className="hardware">
-          {Object.keys(REGISTER_MAP).map(reg => (
-            <div className={this.getClassName(REGISTER_MAP[reg])}>
-              {reg} {this.simulator.registerFile.getRegister(REGISTER_MAP[reg]).value}
-            </div>
-          ))}
-      </div>
+          <h1>Register</h1>
+          {Object.keys(REGISTER_MAP).map(reg => {
+            const regNum = REGISTER_MAP[reg];
+            return (
+              <div key={regNum} className={`reg ${this.getClassName(regNum)}`}>
+                <div>{reg}</div>
+                <div>
+                  {this.simulator.registerFile.getRegister(regNum).value}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
