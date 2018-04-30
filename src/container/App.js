@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Simulator, RegisterAccessType } from 'mips-core';
 
 import { Editor, HardWare } from 'container';
+import { Header } from 'component';
 import { REGISTER_MAP } from 'constant/mips';
 
 import './App.css';
@@ -68,20 +69,26 @@ export class App extends Component {
   render() {
     return (
       <div className="app">
-        <Editor run={this.run} line={this.state.line}/>
-        <div className="hardware">
-          <h1>Register</h1>
-          {Object.keys(REGISTER_MAP).map(reg => {
-            const regNum = REGISTER_MAP[reg];
-            return (
-              <div key={regNum} className={`reg ${this.getClassName(regNum)}`}>
-                <div>{reg}</div>
-                <div>
-                  {this.simulator.registerFile.getRegister(regNum).value}
+        <Header/>
+        <div className="container">
+          <Editor run={this.run} line={this.state.line}/>
+          <div className="hardware">
+            <h1>Register</h1>
+            {Object.keys(REGISTER_MAP).map(reg => {
+              const regNum = REGISTER_MAP[reg];
+              return (
+                <div
+                  key={regNum}
+                  className={`reg ${this.getClassName(regNum)}`}
+                >
+                  <div>{reg}</div>
+                  <div>
+                    {this.simulator.registerFile.getRegister(regNum).value}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     );

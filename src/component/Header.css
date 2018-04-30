@@ -1,0 +1,17 @@
+.header {
+  font-family: sans-serif;
+  color: white;
+  background: #222222;
+  border-bottom: 1px solid rgb(65, 65, 65);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+}
+
+.gh-button {
+  background: #a73535;
+  color: white;
+  text-decoration: none;
+  padding: .75rem 1rem;
+}
